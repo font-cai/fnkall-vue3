@@ -13,8 +13,6 @@
     "lint:prettier": "prettier --write \"**/*.{js,cjs,ts,json,css,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --cache \"**/*.{css,scss,vue}\" --fix",
     "lint:lint-staged": "lint-staged",
-    "preinstall": "npx only-allow pnpm",
-    "prepare": "husky",
     "commit": "git-cz"
   },
   "config": {
@@ -112,8 +110,5 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "repository": "https://gitee.com/youlaiorg/vue3-element-admin.git",
-  "author": "有来开源组织",
-  "license": "MIT"
+  }
 }
