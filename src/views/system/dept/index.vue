@@ -4,7 +4,7 @@
       <el-form ref="queryFormRef" :model="queryParams" :inline="true">
         <el-form-item label="关键字" prop="keywords">
           <el-input
-            v-model="queryParams.keywords"
+            v-model="queryParams.name"
             placeholder="部门名称"
             @keyup.enter="handleQuery"
           />
@@ -255,7 +255,7 @@ function handleSubmit() {
           })
           .finally(() => (loading.value = false));
       } else {
-        DeptAPI.create(formData)
+        DeptAPI.create({ name: formData.name })
           .then(() => {
             ElMessage.success("新增成功");
             handleCloseDialog();

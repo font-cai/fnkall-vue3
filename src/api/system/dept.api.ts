@@ -1,12 +1,12 @@
 import request from "@/utils/request";
 
-const DEPT_BASE_URL = "/api/v1/dept";
+const DEPT_BASE_URL = "/api/depts";
 
 const DeptAPI = {
   /**
    * 获取部门列表
    *
-   * @param queryParams 查询参数（可选）
+   * @param queryParams 查询参数（可选）N
    * @returns 部门树形表格数据
    */
   getList(queryParams?: DeptQuery) {
@@ -75,7 +75,7 @@ const DeptAPI = {
    */
   deleteByIds(ids: string) {
     return request({
-      url: `${DEPT_BASE_URL}/${ids}`,
+      url: `${DEPT_BASE_URL}?id=${ids}`,
       method: "delete",
     });
   },
@@ -86,7 +86,7 @@ export default DeptAPI;
 /** 部门查询参数 */
 export interface DeptQuery {
   /** 搜索关键字 */
-  keywords?: string;
+  name?: string;
   /** 状态 */
   status?: number;
 }
